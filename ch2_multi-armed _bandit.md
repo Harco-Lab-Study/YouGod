@@ -61,23 +61,11 @@ $Q_t(a)$ : time step $t$  에서 action $a$ 를 했을 때 평가된 value
 
 ![Untitled](images/Untitled%205.png)
 
-→ $A_i = a$ 가
+→ $A_i = a$ : true 이면 1, false면 0
 
-true 이면 1
+분모가 0 → $Q_t(a)$ 를 defalut 값으로 → e.g. 0 
 
-false면 0
-
-분모가 0 
-
-분모가 $\infin$
-
-→ $Q_t(a)$ 를 defalut 값으로 
-
-→ $Q_t(a) → q_*(a)$
-
-e.g. 0 
-
-$\because$  큰수의 법칙 
+분모가 $\infty$ → $Q_t(a) → q_*(a)$ $\because$  큰수의 법칙 
 
 위와 같은 방법을 `sample-average method` 라고 함 
 
@@ -88,7 +76,7 @@ $\because$  큰수의 법칙
     
     ![Untitled](images/Untitled%206.png)
     
-- 또 다른 대안은 작은 확률 $\epsilon$ 으로 무작위의 action을 선택하는 것 $`\epsilon$-greedy method`
+- 또 다른 대안은 작은 확률 $\epsilon$ 으로 무작위의 action을 선택하는 것 $\epsilon$-greedy method
 
 <aside>
 💡 단계 수가 증가함에 따라서, 무한히 샘플링되고
@@ -99,7 +87,7 @@ $\because$  큰수의 법칙
 
 </aside>
 
-> Ex 2.1 ) $`\epsilon$-greedy method` 에서, $\epsilon$ = 0.5라면, greedy action이 선택될 확률 ?
+> Ex 2.1 ) $\epsilon$-greedy method 에서, $\epsilon$ = 0.5라면, greedy action이 선택될 확률 ?
 > 
 > 
 > →0.5 
@@ -129,7 +117,7 @@ $\because$  큰수의 법칙
 - $\epsilon$ = 0.01 인 경우, 천천히 개선되었지만, 결국에는 $\epsilon$ = 0.1 인 경우보다 좋은 퍼포먼스를 냄 (그림에는 안보임)
 
 <aside>
-❓ 그렇다면 $\epsilon$-greedy가 greedy정책보다 항상 좋냐 ?
+❓ 그렇다면 Epsilon-greedy가 greedy정책보다 항상 좋냐 ?
 
 →  **Task에 따라 다르다  !**
 
@@ -160,7 +148,7 @@ $\because$  큰수의 법칙
 - 매번 계산하기엔 memory도 많이 필요하고 연산도 비효율적임
 - 따라서 아래와 같이 재귀적으로 표현 가능
     
-    ![Untitled](Ch2%20Multi-armed%20Bandits%201eb24e0df35d4190a195b1464cedc5d7/Untitled%2010.png)
+    ![Untitled](images/Untitled%2010.png)
     
     - 결론적으로, n번째 step에서의 Q,R값만 알면 추정치 예상 가능 (평균의 재귀식)
 - 조금 더 일반화시켜 표현해보면
